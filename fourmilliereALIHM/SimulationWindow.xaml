@@ -1,0 +1,61 @@
+﻿<Window x:Class="fourmilliereALIHM.SimulationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:fourmilliereALIHM"
+        mc:Ignorable="d"
+        Title="Paramètres Simulation" Height="400" Width="600">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" ShowGridLines="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Labels -->
+            <TextBlock Grid.Row="0" Grid.Column="0"
+                       Text="Board Size" FontSize="32" FontWeight="DemiBold"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBlock Grid.Row="1" Grid.Column="0"
+                       Text="Queens" FontSize="32" FontWeight="DemiBold"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBlock Grid.Row="2" Grid.Column="0"
+                       Text="Queens Start Position" FontSize="32" FontWeight="DemiBold" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBlock Grid.Row="3" Grid.Column="0"
+                       Text="Food Units" FontSize="32" FontWeight="DemiBold"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+            
+            <!-- Values -->
+            <TextBox Grid.Row="0" Grid.Column="1"
+                     FontSize="18" Name="SimulationBoardSize" Text="" />
+            <TextBox Grid.Row="1" Grid.Column="1"
+                     FontSize="18" Name="SimulationQueens" Text="" />
+            <ComboBox Grid.Row="2" Grid.Column="1"
+                      FontSize="18" Name="SimulationComboQueenStart"
+                      VerticalAlignment="Stretch">
+                <ComboBoxItem HorizontalAlignment="Center">Border</ComboBoxItem>
+                <ComboBoxItem IsSelected="True" HorizontalAlignment="Center">Random</ComboBoxItem>
+            </ComboBox>
+            <TextBox Grid.Row="3" Grid.Column="1"
+                     FontSize="18" Name="SimulationFoods" Text="" />
+        </Grid>
+        <Button FontSize="22" Grid.Row="1" Content="Run Simulation !" Click="RunSimulation"></Button>
+    </Grid>
+</Window>

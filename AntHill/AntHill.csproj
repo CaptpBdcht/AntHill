@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{226A8A5F-F904-46A7-9620-844D63728FC9}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Anthill</RootNamespace>
+    <AssemblyName>Anthill</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ants\Factories\LarvaFactory.cs" />
+    <Compile Include="Ants\Factories\QueenFactory.cs" />
+    <Compile Include="Ants\Warrior.cs" />
+    <Compile Include="Ants\Factories\WorkerFactory.cs" />
+    <Compile Include="Artefacts\Miam.cs" />
+    <Compile Include="Artefacts\MiamFactory.cs" />
+    <Compile Include="Artefacts\PheromoneFactory.cs" />
+    <Compile Include="Commands\BackToQueenCommand.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\IdleCommand.cs" />
+    <Compile Include="CustomAnthillFactory.cs" />
+    <Compile Include="Locations\BorderLocationFactory.cs" />
+    <Compile Include="Locations\LocationMethod.cs" />
+    <Compile Include="Locations\LocationMethodUtils.cs" />
+    <Compile Include="Locations\NearLocationFactory.cs" />
+    <Compile Include="Locations\RandomLocationFactory.cs" />
+    <Compile Include="Strategies\Actions\BackToAntStrategy.cs" />
+    <Compile Include="Strategies\Actions\DoNothingStrategy.cs" />
+    <Compile Include="Strategies\Actions\EatFoodStrategy.cs" />
+    <Compile Include="Strategies\Actions\EggsProduceStrategy.cs" />
+    <Compile Include="Strategies\Actions\FindFoodStrategy.cs" />
+    <Compile Include="Strategies\Actions\FollowPheromonesStrategy.cs" />
+    <Compile Include="Strategies\Actions\LarvaHatchingStrategy.cs" />
+    <Compile Include="Strategies\Actions\SimpleMoveStrategy.cs" />
+    <Compile Include="Ants\Ant.cs" />
+    <Compile Include="Anthill.cs" />
+    <Compile Include="Ants\Larva.cs" />
+    <Compile Include="Ants\Queen.cs" />
+    <Compile Include="Ants\Worker.cs" />
+    <Compile Include="Strategies\Actions\StoreFoodStrategy.cs" />
+    <Compile Include="Strategies\Time\LittleIllnessStrategy.cs" />
+    <Compile Include="Zones\Forest.cs" />
+    <Compile Include="Zones\Ground.cs" />
+    <Compile Include="Zones\IFridge.cs" />
+    <Compile Include="Zones\ZoneFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ants\Factories\WarriorFactory.cs" />
+    <Compile Include="Strategies\Time\GetOlderStrategy.cs" />
+    <Compile Include="Valhalla.cs" />
+    <Compile Include="Zones\Lava.cs" />
+    <Compile Include="Artefacts\Pheromone.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Engine\Engine.csproj">
+      <Project>{e6a3ea0a-0756-4513-aa4f-436116e87a71}</Project>
+      <Name>Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
